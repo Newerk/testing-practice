@@ -11,3 +11,10 @@ test('Is a String',()=> {
     expect(typeof(capitalize('test')) === "string").toBeTruthy();
 })
 
+test('No value entered', () => {
+    expect(() => capitalize()).toThrow('Please enter a string');
+})
+
+test('Number was entered', () => {
+    expect(() => capitalize(555)).toThrow('Please enter a string');
+})
