@@ -1,4 +1,4 @@
 export function capitalize(value) {
-    return true;
+    return value.split('')[0].toUpperCase() + value.slice(1);
 }
 
