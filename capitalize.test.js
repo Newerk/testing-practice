@@ -2,6 +2,7 @@ import { capitalize } from "./capitalize"
 
 test('First letter is uppercase',()=> { 
     expect(capitalize('test').split('')[0]).toMatch(/T/);
+    expect(capitalize('tHiS IS a SenTenCE!').split('')[0]).toMatch(/T/);
 })
 
 test('Is a String',()=> { 
