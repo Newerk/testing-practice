@@ -22,20 +22,20 @@ test('negative shift (-)', () => {
 })
 
 test('key range is any number from -25 to 25', () => {
-    expect(() => caesarCipher('a', -30)).toThrow('Key is out of range. Only allow numbers from -25 and 25');
-    expect(() => caesarCipher('a', 30)).toThrow('Key is out of range. Only allow numbers from -25 and 25');
+    expect(() => caesarCipher('a', -30)).toThrow('Key is out of range. Only allow numbers from -25 to 25');
+    expect(() => caesarCipher('a', 30)).toThrow('Key is out of range. Only allow numbers from -25 to 25');
 })
 
 test('Index after + shift', () => {
-    expect(indexAfterShift(23, 9)).toBe(6);
-})
-
-test('Index after - shift', () => {
     expect(indexAfterShift(5, 2)).toBe(7);
 })
 
-test('Wrap past index 25 with shift', () => {
+test('Index after - shift', () => {
     expect(indexAfterShift(20, -5)).toBe(15);
+})
+
+test('Wrap past index 25 with shift', () => {
+    expect(indexAfterShift(23, 9)).toBe(6);
 })
 
 test('Wrap past index 0 with shift', () => {
