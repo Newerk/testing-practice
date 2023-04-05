@@ -19,7 +19,6 @@ export function caesarCipher(string, key) {
     return cipher;
 }
 
-// this function returns the proper index after a shift. Expected to also loop past 0 or 25, this depends on direction of the shift(-/+)
 export function indexAfterShift(letter, shift) {
     letter = letter.toLowerCase();
     let index = lowercaseAlphabet.indexOf(letter) + shift;
