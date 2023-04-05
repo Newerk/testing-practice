@@ -19,10 +19,10 @@ export function indexAfterShift(letter, shift) {
     let index = alphabet.indexOf(letter) + shift;
 
     if (index > 25) {
-        
+        index = index - 26;
     }
     if (index < 0) {
-        
+        index = 26 + index;
     }
 
     return index;

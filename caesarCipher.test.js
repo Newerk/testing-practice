@@ -27,17 +27,22 @@ test('key range is any number from -25 to 25', () => {
 })
 
 test('Index after + shift', () => {
-    expect(indexAfterShift(5, 2)).toBe(7);
+    expect(indexAfterShift('f', 2)).toBe(7);
+    expect(indexAfterShift('F', 2)).toBe(7);
 })
 
 test('Index after - shift', () => {
-    expect(indexAfterShift(20, -5)).toBe(15);
+    expect(indexAfterShift('u', -5)).toBe(15);
+    expect(indexAfterShift('U', -5)).toBe(15);
 })
 
 test('Wrap past index 25 with shift', () => {
-    expect(indexAfterShift(23, 9)).toBe(6);
+    expect(indexAfterShift('x', 9)).toBe(6);
+    expect(indexAfterShift('X', 9)).toBe(6);
 })
 
 test('Wrap past index 0 with shift', () => {
-    expect(indexAfterShift(5, -12)).toBe(19);
+    expect(indexAfterShift('f', -12)).toBe(19);
+    expect(indexAfterShift('F', -12)).toBe(19);
 })
+
