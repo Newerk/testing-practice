@@ -19,3 +19,7 @@ test('negative shift (-)', () => {
     expect(caesarCipher('a', -1)).toMatch(/z/);
 })
 
+test('key range is any number from -25 to 25', () => {
+    expect(() => caesarCipher('a', -30)).toThrow('Key is out of range. Only allow numbers from -25 and 25');
+    expect(() => caesarCipher('a', 30)).toThrow('Key is out of range. Only allow numbers from -25 and 25');
+})
