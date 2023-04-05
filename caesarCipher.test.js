@@ -10,14 +10,14 @@ test('no shift (+/-0)', () => {
 test('positive shift (+)', () => {
     expect(caesarCipher('abc', 3)).toMatch(/def/);
     expect(caesarCipher('tu vwx yz', 10)).toMatch(/de fgh ij/);
-    expect(caesarCipher('ONE 2 THR33 4OUR', 25)).toMatch(/NMD 2 SHQ33 4NTQ/);
+    expect(caesarCipher('ONE 2 THR33 4OUR', 25)).toMatch(/NMD 2 SGQ33 4NTQ/);
     expect(caesarCipher('z', 1)).toMatch(/a/);
 })
 
 test('negative shift (-)', () => {
     expect(caesarCipher('abc', -3)).toMatch(/xyz/);
     expect(caesarCipher('tu hj mw', -10)).toMatch(/jk xz cm/);
-    expect(caesarCipher('ONE 2 THR33 4OUR', -25)).toMatch(/EDU 2 JXH33 4EKH/);
+    expect(caesarCipher('ONE 2 THR33 4OUR', -25)).toMatch(/POF 2 UIS33 4PVS/);
     expect(caesarCipher('a', -1)).toMatch(/z/);
 })
 
