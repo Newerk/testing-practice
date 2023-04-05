@@ -1,14 +1,20 @@
+const lowercaseAlphabet = 'abcdefghijklmnopqrstuvwxyz';
+const uppercaseAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
 export function caesarCipher(string, key) {
     if (key < -25 || key > 25) {
         throw new Error('Key is out of range. Only allow numbers from -25 to 25');
     }
-    const cipher = "";
+    let cipher = "";
     const stringArr = string.split('');
-    for (const iterator of stringArr) {
-        if (/[a-z]/gi.test(iterator)) {
-            indexAfterShift(iterator, key)
+    for (let iterator of stringArr) {
+        if (/[a-z]/g.test(iterator)) {
+            iterator = lowercaseAlphabet[indexAfterShift(iterator, key)];
         }
-
+        if (/[A-Z]/g.test(iterator)) {
+            iterator = uppercaseAlphabet[indexAfterShift(iterator, key)];
+        }
+        cipher += iterator;
     }
     return cipher;
 }
@@ -16,14 +22,13 @@ export function caesarCipher(string, key) {
 // this function returns the proper index after a shift. Expected to also loop past 0 or 25, this depends on direction of the shift(-/+)
 export function indexAfterShift(letter, shift) {
     letter = letter.toLowerCase();
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    let index = alphabet.indexOf(letter) + shift;
+    let index = lowercaseAlphabet.indexOf(letter) + shift;
 
     if (index > 25) {
-        index = index - 26;
+        index -= 26;
     }
     if (index < 0) {
-        index = 26 + index;
+        index += 26;
     }
 
     return index;
